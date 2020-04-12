@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pl" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="style.css" type="text/css" />
+  <title>Tajniacy</title>
+</head>
+<body>
+<div id="page">
+<div id="licenseQuestion" class="invisible message">
+  <p>To jest internetowa gra Tajniacy. Możesz w nią grać tylko wtedy, jeżeli
+    zakupiłeś wersję pudełkową, np.
+    <a href="https://bonito.pl/k-90492285-tajniacy">tutaj</a>
+    .
+  </p>
+  <form>
+    <input type="button" value="Mam pudełko z grą" onclick="acceptLicense()"/>
+    <input type="button" value="Nie mam gry" onclick="reject()"/>
+  </form>
+</div>
+<div id="reject" class="invisible message">Dziękujemy za uczciwość.</div>
+
+<div id="game" class="invisible">
+
+  <div id="control">
+    <p>Board seed: <span id="boardSeed"></span></p>
+    <form>
+      <input type="button" value="nextBoard" onclick="initNextBoard()"/>
+      <input type="radio" name="side" id="advicing">advicing</input>
+      <input type="radio" name="side" id="guessing">guessing</input>
+    </form>
+  </div>
+
+  <div id="cards"></div>
+
+</div><!--game-->
+</div><!--page-->
+</body>
+
+<script src="tajniacy.js"></script>
+<script src="../../../build/distributions/tajniacy.js"></script>
+<script src="words.js"></script>
+<script src="frontend.js"></script>
+
+</html>

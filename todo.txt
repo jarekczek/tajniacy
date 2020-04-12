@@ -1,0 +1,4 @@
+ostrzeżenie o konieczności zakupu gry
+słowa w osobnym pliku, poza repo
+score
+zaczynający

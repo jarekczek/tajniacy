@@ -1,0 +1,30 @@
+body {
+  background-color:#fec; font-family: tahoma,arial,sans-serif;
+  color:#310; /* #99e59c; } */
+  margin:0; border:0; padding:0;
+}
+
+#page {  margin-top: 5em; }
+.message { width: 40em; margin: 0 auto; border: solid 1px;
+  padding-left: 2em; padding-right: 2em; padding-top: 1em; padding-bottom: 2em; }
+#game { width: 50em; margin: 0 auto; border: solid 1px;
+  padding-left: 2em; padding-right: 2em; padding-top: 1em; padding-bottom: 2em; }
+#control { padding: 1em; }
+#cards { border: solid 1px;
+  padding-left: 2em; padding-right: 2em; padding-top: 1em; padding-bottom: 2em; }
+
+A:link { font-weight: bold; color:#A00000; text-decoration: none; }
+A:visited { font-weight: bold; color:#A00000; text-decoration: none; }
+A:hover { background-color:#ABABFF; font-weight: bold; color:#A00000; text-decoration: none; }
+A.nohover:hover { background-color:inherit; }
+
+.invisible { display: none; }
+
+input.card { display: block; }
+input.advicing.red { background-color: #f88; }
+input.advicing.blue { background-color: #88f; }
+input.guessing.red { background-color: #600; }
+input.guessing.blue { background-color: #008; }
+input.advicing.neutral { background-color: #fff; }
+input.guessing.neutral { background-color: #8f8; }
+input.death { color: white; background-color: black; }
