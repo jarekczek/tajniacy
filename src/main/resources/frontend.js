@@ -28,6 +28,7 @@ function initCards() {
     cardsElem.appendChild(input)
   }
   refreshCardClasses()
+  updateScore()
 }
 
 function showLicense() {
@@ -56,6 +57,27 @@ function refreshCardClasses() {
   })
 }
 
+function updateScore() {
+  document.querySelector("#score").classList.remove("invisible")
+  var cards = getCards()
+  var scores = { RED: 0, BLUE: 0 }
+  document.querySelectorAll(".card").forEach( (cardElem) => {
+    var i = cardElem.getAttribute("cardIndex")
+    var type = cards[i].type
+    if (cardElem.getAttribute("cardVisible") == "true" && type in scores) {
+      scores[type]++
+    }
+  })
+  var redScoreToDisplay = "? / "
+  var blueScoreToDisplay = "? / "
+  if (isGuessing()) {
+    redScoreToDisplay = scores['RED'] + " / "
+    blueScoreToDisplay = scores['BLUE'] + " / "
+  }
+  document.querySelector("#scoreRed").value = redScoreToDisplay + window.board.redCardCount
+  document.querySelector("#scoreBlue").value = blueScoreToDisplay + window.board.blueCardCount
+}
+
 function getCards() {
   return board.cards
 }
@@ -72,6 +94,7 @@ function cardOnClick(a, b, c) {
   //console.log("clicked card " + a.toElement.getAttribute("cardIndex"))
   a.toElement.setAttribute("cardVisible", "true")
   refreshCardClasses()
+  updateScore()
 }
 
 function initNextBoard() {

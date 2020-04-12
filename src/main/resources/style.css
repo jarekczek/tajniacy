@@ -9,9 +9,11 @@ body {
   padding-left: 2em; padding-right: 2em; padding-top: 1em; padding-bottom: 2em; }
 #game { width: 50em; margin: 0 auto; border: solid 1px;
   padding-left: 2em; padding-right: 2em; padding-top: 1em; padding-bottom: 2em; }
+#upper { height: 7em; }
 #control { padding: 1em; }
-#cards { border: solid 1px;
+#cards { border: solid 1px; float: none;
   padding-left: 2em; padding-right: 2em; padding-top: 1em; padding-bottom: 2em; }
+#upper div { float: left; }
 
 A:link { font-weight: bold; color:#A00000; text-decoration: none; }
 A:visited { font-weight: bold; color:#A00000; text-decoration: none; }

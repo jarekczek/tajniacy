@@ -22,6 +22,7 @@
 
 <div id="game" class="invisible">
 
+  <div id="upper">
   <div id="control">
     <p>Board seed: <span id="boardSeed"></span></p>
     <form>
@@ -30,6 +31,14 @@
       <input type="radio" name="side" id="guessing">guessing</input>
     </form>
   </div>
+    <div id="score" class="invisible" >
+      <label>Red:</label>
+      <input id="scoreRed" type="text" disabled />
+      <br/>
+      <label>Blue:</label>
+      <input id="scoreBlue" type="text" disabled />
+    </div>
+  </div><!--upper-->
 
   <div id="cards"></div>
 

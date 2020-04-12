@@ -7,6 +7,9 @@ class Board(val seed: Int, val words: Array<String>) {
   val teamCardCount = 1
   val deathCardCount = 1
   val random = Random(seed)
+  var startingSide = if (random.nextBoolean()) CardType.RED else CardType.BLUE
+  var redCardCount = teamCardCount + (if (startingSide == CardType.RED) 1 else 0)
+  var blueCardCount = teamCardCount + (if (startingSide == CardType.BLUE) 1 else 0)
   var cards = generateCards()
 
   fun generateCards(): Array<Card> {
@@ -14,8 +17,8 @@ class Board(val seed: Int, val words: Array<String>) {
     val wordsSequence = selectedWords.shuffled(random).iterator()
     val cards = selectedWords.map { Card(it) }.toTypedArray()
     markCardsWithType(deathCardCount, CardType.DEATH, cards, wordsSequence)
-    markCardsWithType(teamCardCount, CardType.RED, cards, wordsSequence)
-    markCardsWithType(teamCardCount, CardType.BLUE, cards, wordsSequence)
+    markCardsWithType(redCardCount, CardType.RED, cards, wordsSequence)
+    markCardsWithType(blueCardCount, CardType.BLUE, cards, wordsSequence)
     return cards
   }
 
