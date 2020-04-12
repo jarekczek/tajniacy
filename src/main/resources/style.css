@@ -11,9 +11,10 @@ body {
   padding-left: 2em; padding-right: 2em; padding-top: 1em; padding-bottom: 2em; }
 #upper { height: 7em; }
 #control { padding: 1em; }
-#cards { border: solid 1px; float: none;
+#cards { border: solid 1px; float: none; height: 8em;
   padding-left: 2em; padding-right: 2em; padding-top: 1em; padding-bottom: 2em; }
 #upper div { float: left; }
+.cardColumn { float: left; padding-right: 1em; }
 
 A:link { font-weight: bold; color:#A00000; text-decoration: none; }
 A:visited { font-weight: bold; color:#A00000; text-decoration: none; }

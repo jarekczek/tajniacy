@@ -3,7 +3,7 @@ package backend
 import kotlin.random.Random
 
 class Board(val seed: Int, val words: Array<String>) {
-  val cardCount = 6
+  val cardCount = 25
   val teamCardCount = 1
   val deathCardCount = 1
   val random = Random(seed)

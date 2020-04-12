@@ -10,8 +10,11 @@ initNextBoard()
 function initCards() {
   var cardsElem = document.querySelector("#cards")
   cardsElem.innerHTML = ''
+  var cardParent = null
   var cards = getCards()
   for (var i = 0; i < cards.length; i++) {
+    if (i % 5 == 0)
+      cardParent = createCardParent(cardsElem)
     var input = document.createElement("input")
     input.classList.add("card")
     input.setAttribute("type", "button")
@@ -25,10 +28,17 @@ function initCards() {
       input.classList.add("guessing")
     }
     input.onclick = cardOnClick
-    cardsElem.appendChild(input)
+    cardParent.appendChild(input)
   }
   refreshCardClasses()
   updateScore()
+}
+
+function createCardParent(cardsElem) {
+  var div = document.createElement("div")
+  div.classList.add("cardColumn")
+  cardsElem.appendChild(div)
+  return div
 }
 
 function showLicense() {
