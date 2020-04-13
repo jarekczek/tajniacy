@@ -2,3 +2,6 @@ ostrzeżenie o konieczności zakupu gry
 słowa w osobnym pliku, poza repo
 score
 zaczynający
+żeby się zakrywały karty u podpowiadającego, łącznie z neutralnymi
+czas
+odstępy w pionie

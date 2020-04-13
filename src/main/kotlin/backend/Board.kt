@@ -4,7 +4,7 @@ import kotlin.random.Random
 
 class Board(val seed: Int, val words: Array<String>) {
   val cardCount = 25
-  val teamCardCount = 1
+  val teamCardCount = 8
   val deathCardCount = 1
   val random = Random(seed)
   var startingSide = if (random.nextBoolean()) CardType.RED else CardType.BLUE
