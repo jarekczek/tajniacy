@@ -1,12 +1,3 @@
-if (window.location.href.indexOf("noQuestion") >= 0) {
-  acceptLicense()
-} else {
-  showLicense()
-}
-
-var backend = new tajniacy.backend.TajniacyBackend(getWords())
-initNextBoard()
-
 function initCards() {
   var cardsElem = document.querySelector("#cards")
   cardsElem.innerHTML = ''
@@ -64,6 +55,9 @@ function refreshCardClasses() {
       cardElem.classList.add(("" + cards[i].type).toLowerCase())
       //console.log("current classes: " + cardElem.classList)
     }
+    if (cardElem.getAttribute("cardClicked") == "true") {
+      cardElem.classList.add("clicked")
+    }
   })
 }
 
@@ -103,6 +97,7 @@ function isGuessing() {
 function cardOnClick(a, b, c) {
   //console.log("clicked card " + a.toElement.getAttribute("cardIndex"))
   a.toElement.setAttribute("cardVisible", "true")
+  a.toElement.setAttribute("cardClicked", "true")
   refreshCardClasses()
   updateScore()
 }
@@ -111,4 +106,49 @@ function initNextBoard() {
   window.board = backend.nextBoard()
   document.querySelector("#boardSeed").textContent = window.board.seed
   initCards(window.board)
+  if (window.boardTimer == undefined) {
+    window.boardTimer = new Timer("time")
+  }
+  timerStart(120000)
 }
+
+class Timer {
+  constructor(valueId) {
+    this.valueId = valueId
+  }
+
+  start(millis) {
+    window.clearTimeout(this.timeout)
+    this.alarmStartTime = Date.now()
+    this.alarmTime = Date.now() + millis
+    this.updateDisplay()
+    this.timeoutCallback()
+  }
+
+  timeoutCallback() {
+    this.updateDisplay()
+    var millisRemaining = (this.alarmTime - Date.now())
+    if (millisRemaining >= 0) {
+      this.timeout = window.setTimeout(this.timeoutCallback.bind(this), millisRemaining % 1000)
+    }
+  }
+
+  updateDisplay() {
+    var secondsRemaining = Math.round(Math.max(0, this.alarmTime - Date.now()) / 1000, 0)
+    document.querySelector("#" + this.valueId).value = secondsRemaining
+  }
+}
+
+function timerStart(millis) {
+  window.boardTimer.start(millis)
+}
+
+// main
+if (window.location.href.indexOf("noQuestion") >= 0) {
+  acceptLicense()
+} else {
+  showLicense()
+}
+
+var backend = new tajniacy.backend.TajniacyBackend(getWords())
+initNextBoard()
