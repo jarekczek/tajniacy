@@ -11,9 +11,9 @@ function initCards() {
     input.setAttribute("type", "button")
     input.setAttribute("value", cards[i].word)
     input.setAttribute("cardIndex", i)
-    input.setAttribute("cardVisible", isAdvicing())
-    if (isAdvicing()) {
-      input.classList.add("advicing")
+    input.setAttribute("cardVisible", isAdvising())
+    if (isAdvising()) {
+      input.classList.add("advising")
     }
     if (isGuessing()) {
       input.classList.add("guessing")
@@ -86,8 +86,8 @@ function getCards() {
   return board.cards
 }
 
-function isAdvicing() {
-  return document.querySelector("#advicing").checked
+function isAdvising() {
+  return document.querySelector("#advising").checked
 }
 
 function isGuessing() {
@@ -106,7 +106,7 @@ function initNextBoard(side, boardNumber) {
   if (side == 'guessing') {
     document.querySelector("#guessing").checked = true
   } else {
-    document.querySelector("#advicing").checked = true
+    document.querySelector("#advising").checked = true
   }
   window.board = backend.nextBoard(boardNumber)
   document.querySelector("#boardSeed").textContent = window.board.seed

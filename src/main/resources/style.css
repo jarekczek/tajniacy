@@ -25,13 +25,13 @@ A.nohover:hover { background-color:inherit; }
 .invisible { display: none; }
 
 input.card { display: block; margin-bottom: 1em; }
-input.advicing.red { background-color: #f88; }
-input.advicing.red.clicked { background-color: #600; }
-input.advicing.blue { background-color: #88f; }
-input.advicing.blue.clicked { background-color: #008; }
+input.advising.red { background-color: #f88; }
+input.advising.red.clicked { background-color: #600; }
+input.advising.blue { background-color: #88f; }
+input.advising.blue.clicked { background-color: #008; }
 input.guessing.red { background-color: #600; }
 input.guessing.blue { background-color: #008; }
-input.advicing.neutral { background-color: #fff; }
-input.advicing.neutral.clicked { background-color: #060; }
+input.advising.neutral { background-color: #fff; }
+input.advising.neutral.clicked { background-color: #060; }
 input.guessing.neutral { background-color: #8f8; }
 input.death { color: white; background-color: black; }
