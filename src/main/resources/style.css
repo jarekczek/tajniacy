@@ -5,7 +5,7 @@ body {
 }
 
 #page {  margin-top: 3em; }
-.message { width: 40em; margin: 0 auto; border: solid 1px;
+.message { max-width: 40em; margin: 0 auto; border: solid 1px;
   padding-left: 2em; padding-right: 2em; padding-top: 1em; padding-bottom: 2em; }
 #game { margin: 1em; border: solid 1px;
   padding-left: 1em; padding-right: 1em; padding-top: 1em; padding-bottom: 2em; }
