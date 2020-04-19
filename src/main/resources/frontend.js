@@ -102,7 +102,12 @@ function cardOnClick(a, b, c) {
   updateScore()
 }
 
-function initNextBoard(boardNumber) {
+function initNextBoard(side, boardNumber) {
+  if (side == 'guessing') {
+    document.querySelector("#guessing").checked = true
+  } else {
+    document.querySelector("#advicing").checked = true
+  }
   window.board = backend.nextBoard(boardNumber)
   document.querySelector("#boardSeed").textContent = window.board.seed
   initCards(window.board)
@@ -153,7 +158,7 @@ if (window.location.href.indexOf("noQuestion") >= 0) {
 var backend = new tajniacy.backend.TajniacyBackend(getWords())
 if (window.location.href.indexOf("board=") >= 0) {
   var boardNumber = parseInt(window.location.href.match(/board=([0-9]+)/)[1])
-  initNextBoard(boardNumber)
+  initNextBoard('guessing', boardNumber)
 } else {
-  initNextBoard()
+  initNextBoard('guessing')
 }
