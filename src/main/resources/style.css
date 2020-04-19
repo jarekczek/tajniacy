@@ -13,19 +13,22 @@ body {
 #cards { border: solid 1px; float: none; max-width: 34em; 
   padding-left: 1em; padding-right: 1em; padding-top: 1em; padding-bottom: 2em; }
 #upper div { float: left;
-  padding-left: 1em; padding-right: 2em; padding-top: 1em; padding-bottom: 1em; 
+  padding-right: 1em; padding-bottom: 1em; 
 }
 .cardColumn { float: left; padding-right: 1em; }
-p { margin-block-start: 0; }
+p { margin-block-start: 0; margin-block-end: 0.5em; }
 
 A:link { font-weight: bold; color:#A00000; text-decoration: none; }
 A:visited { font-weight: bold; color:#A00000; text-decoration: none; }
 A:hover { background-color:#ABABFF; font-weight: bold; color:#A00000; text-decoration: none; }
 A.nohover:hover { background-color:inherit; }
+input { margin-bottom: 0.3em; }
 
 .invisible { display: none; }
 
-input.card { display: inline; margin-bottom: 1em; width: 8em; }
+input.card { display: inline;
+  margin-bottom: 1em; margin-left:0.1em; margin-right: 0.1em;
+  width: 7.8em; }
 input.advising.red { background-color: #f88; }
 input.advising.red.clicked { background-color: #600; }
 input.advising.blue { background-color: #88f; }
