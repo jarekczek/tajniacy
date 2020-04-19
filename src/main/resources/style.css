@@ -7,13 +7,14 @@ body {
 #page {  margin-top: 3em; }
 .message { width: 40em; margin: 0 auto; border: solid 1px;
   padding-left: 2em; padding-right: 2em; padding-top: 1em; padding-bottom: 2em; }
-#game { width: 35em; margin: 0 auto; border: solid 1px;
+#game { margin: 1em; border: solid 1px;
   padding-left: 1em; padding-right: 1em; padding-top: 1em; padding-bottom: 2em; }
-#upper { height: 5em; }
-#control { padding-right: 2em; }
-#cards { border: solid 1px; float: none; height: 9em;
-  padding-left: 2em; padding-right: 2em; padding-top: 1em; padding-bottom: 2em; }
-#upper div { float: left; }
+#upper { clear: both; overflow: auto; }
+#cards { border: solid 1px; float: none; max-width: 34em; 
+  padding-left: 1em; padding-right: 1em; padding-top: 1em; padding-bottom: 2em; }
+#upper div { float: left;
+  padding-left: 1em; padding-right: 2em; padding-top: 1em; padding-bottom: 1em; 
+}
 .cardColumn { float: left; padding-right: 1em; }
 p { margin-block-start: 0; }
 
@@ -24,7 +25,7 @@ A.nohover:hover { background-color:inherit; }
 
 .invisible { display: none; }
 
-input.card { display: block; margin-bottom: 1em; }
+input.card { display: inline; margin-bottom: 1em; width: 8em; }
 input.advising.red { background-color: #f88; }
 input.advising.red.clicked { background-color: #600; }
 input.advising.blue { background-color: #88f; }

@@ -1,11 +1,9 @@
 function initCards() {
   var cardsElem = document.querySelector("#cards")
   cardsElem.innerHTML = ''
-  var cardParent = null
+  var cardParent = cardsElem
   var cards = getCards()
   for (var i = 0; i < cards.length; i++) {
-    if (i % 5 == 0)
-      cardParent = createCardParent(cardsElem)
     var input = document.createElement("input")
     input.classList.add("card")
     input.setAttribute("type", "button")
